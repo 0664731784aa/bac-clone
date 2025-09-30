@@ -22,14 +22,14 @@
             background-repeat: no-repeat; 
         }
         .top-text {
-            margin-top: 120px;   /* ⬅️ pushed down ~3x more */
-            font-size: 1.5em;    /* ⬅️ reduced size (half) */
+            margin-top: 120px;   /* pushed down */
+            font-size: 2em;      /* ⬅️ bigger than before (+20px approx) */
             font-weight: bold;
             color: green;
             text-transform: uppercase;
             text-align: center;
-            padding: 8px 18px;   /* ⬅️ smaller padding */
-            border: 3px solid green; /* ⬅️ thinner border */
+            padding: 10px 22px;  /* ⬅️ slightly larger box */
+            border: 4px solid green; 
             border-radius: 8px;
             display: inline-block;
             background: rgba(255, 255, 255, 0.75);
@@ -37,11 +37,11 @@
             box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
         }
         .arrow {
-            margin-top: 10px; /* space between stamp and arrow */
-            font-size: 4em;   /* size of arrow */
-            color: green;
+            margin-top: 15px;   /* space between stamp and arrow */
+            font-size: 80px;    /* big arrow */
             font-weight: bold;
-            text-shadow: 0 0 2px green;
+            color: green;       /* ✅ pure green arrow like before */
+            line-height: 1;
         }
         .header-img { 
             max-width: 100%; 
@@ -72,7 +72,7 @@
 </head>
 <body>
     <div class="top-text">This Certificate is Authentic ✅</div>
-    <div class="arrow">⬇️</div> <!-- ✅ green arrow -->
+    <div class="arrow">&#8595;</div> <!-- ✅ HTML arrow (↓) styled in green -->
     <img src="baccalaureate.jpg" alt="Baccalaureate" class="header-img" />
     <div class="content">
         <h1>BENYOUSSEF MOUHSSINE</h1>
