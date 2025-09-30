@@ -5,16 +5,39 @@
     <meta charset="UTF-8">
     <title>Baccalaureate Clone</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        .header-img { width: 100%; max-height: 600px; object-fit: cover; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            height: 100vh;                 
+            display: flex;                 
+            flex-direction: column;        
+            justify-content: center;       
+            align-items: center;           
+            border: 10px solid gold;       /* Golden border */
+            box-sizing: border-box;        
+
+            /* ✅ Background image */
+            background-image: url("background.jpg"); /* replace with your file name */
+            background-size: cover;  /* make it cover the screen */
+            background-position: center; /* center it */
+            background-repeat: no-repeat; /* no tiling */
+        }
+        .header-img { 
+            max-width: 100%; 
+            max-height: 600px; 
+            object-fit: cover; 
+        }
         .content { 
             padding: 20px; 
             text-align: center; 
+            background: rgba(255, 255, 255, 0.7); /* ✅ light background so text stays readable */
+            border-radius: 10px;
         }
         .year {
             font-size: 2em;   /* same size as h1 */
             font-weight: bold;
-            margin: 0;       /* removes extra spacing */
+            margin: 0;
         }
     </style>
 </head>
