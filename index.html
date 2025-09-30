@@ -11,92 +11,73 @@
             height: 100vh;                 
             display: flex;                 
             flex-direction: column;        
-            justify-content: space-between;  
+            justify-content: center;       
             align-items: center;           
             box-sizing: border-box;        
 
             /* ✅ Background image */
-            background-image: url("background.jpg"); 
+            background-image: url("background.jpg"); /* replace with your file name */
             background-size: cover;  
             background-position: center; 
             background-repeat: no-repeat; 
         }
-
-        /* ✅ Stamp style */
         .top-text {
-            margin-top: 40px;
-            font-size: 3em;
+            margin-top: 120px;   /* ⬅️ pushed down ~3x more */
+            font-size: 1.5em;    /* ⬅️ reduced size (half) */
             font-weight: bold;
             color: green;
             text-transform: uppercase;
             text-align: center;
-            padding: 15px 35px;
-            border: 5px solid green;
-            border-radius: 12px;
+            padding: 8px 18px;   /* ⬅️ smaller padding */
+            border: 3px solid green; /* ⬅️ thinner border */
+            border-radius: 8px;
             display: inline-block;
             background: rgba(255, 255, 255, 0.75);
-            transform: rotate(-2deg); 
+            transform: rotate(-2deg);
             box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
         }
-
-        /* ✅ Arrow pointing down */
         .arrow {
-            width: 0; 
-            height: 0; 
-            border-left: 40px solid transparent;
-            border-right: 40px solid transparent;
-            border-top: 60px solid green; /* arrow head */
-            margin-top: 15px; /* distance between stamp and arrow */
-            background: transparent;
+            margin-top: 10px; /* space between stamp and arrow */
+            font-size: 4em;   /* size of arrow */
+            color: green;
+            font-weight: bold;
+            text-shadow: 0 0 2px green;
         }
-
         .header-img { 
             max-width: 100%; 
             max-height: 600px; 
             object-fit: cover; 
-            margin-top: 20px;
         }
-
         .content { 
             padding: 20px; 
             text-align: center; 
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.7); 
             border-radius: 10px;
         }
-
         .year {
-            font-size: 2em;
+            font-size: 2em;   
             font-weight: bold;
             margin: 0;
         }
-
         .footer {
-            margin-bottom: 15px;
+            position: absolute;
+            bottom: 10px;
             font-size: 0.9em;
             color: black;
-            background: rgba(255, 255, 255, 0.6);
-            padding: 5px 10px;
-            border-radius: 8px;
+            background: rgba(255,255,255,0.6);
+            padding: 5px 15px;
+            border-radius: 6px;
         }
     </style>
 </head>
 <body>
-    <!-- ✅ Green Stamp -->
     <div class="top-text">This Certificate is Authentic ✅</div>
-
-    <!-- ✅ Green Arrow -->
-    <div class="arrow"></div>
-
-    <!-- ✅ Main content -->
-    <div>
-        <img src="baccalaureate.jpg" alt="Baccalaureate" class="header-img" />
-        <div class="content">
-            <h1>BENYOUSSEF MOUHSSINE</h1>
-            <p class="year">2025</p>
-        </div>
+    <div class="arrow">⬇️</div> <!-- ✅ green arrow -->
+    <img src="baccalaureate.jpg" alt="Baccalaureate" class="header-img" />
+    <div class="content">
+        <h1>BENYOUSSEF MOUHSSINE</h1>
+        <p class="year">2025</p>
     </div>
-
-    <!-- ✅ Footer -->
     <div class="footer">Copyright © 2025 Armonis. All rights reserved.</div>
 </body>
 </html>
