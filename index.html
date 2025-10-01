@@ -15,20 +15,19 @@
             align-items: center;           
             box-sizing: border-box;        
 
-            /* ✅ Background image */
-            background-image: url("background.jpg"); /* replace with your file name */
+            background-image: url("background.jpg"); 
             background-size: cover;  
             background-position: center; 
             background-repeat: no-repeat; 
         }
         .top-text {
-            margin-top: 120px;   /* pushed down */
-            font-size: 2em;      /* ⬅️ bigger than before (+20px approx) */
+            margin-top: 120px;   
+            font-size: 2em;      
             font-weight: bold;
             color: green;
             text-transform: uppercase;
             text-align: center;
-            padding: 10px 22px;  /* ⬅️ slightly larger box */
+            padding: 10px 22px;  
             border: 4px solid green; 
             border-radius: 8px;
             display: inline-block;
@@ -37,16 +36,72 @@
             box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
         }
         .arrow {
-            margin-top: 15px;   /* space between stamp and arrow */
-            font-size: 80px;    /* big arrow */
+            margin-top: 15px;   
+            font-size: 80px;    
             font-weight: bold;
-            color: green;       /* ✅ pure green arrow like before */
+            color: green;       
             line-height: 1;
         }
-        .header-img { 
-            max-width: 100%; 
-            max-height: 600px; 
-            object-fit: cover; 
+        /* ✅ Protected image wrapper */
+        .protected {
+            position: relative;
+            display: inline-block;
+        }
+        .protected img {
+            display: block;
+            max-width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            pointer-events: none;  
+        }
+        /* Transparent overlay */
+        .protected::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: transparent;
+        }
+        /* ✅ Watermark repeated pattern */
+        .watermark {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            background-image: repeating-linear-gradient(
+                45deg, 
+                rgba(0, 128, 0, 0.25) 0, 
+                rgba(0, 128, 0, 0.25) 1px, 
+                transparent 1px, 
+                transparent 80px
+            ),
+            repeating-linear-gradient(
+                -45deg, 
+                rgba(0, 128, 0, 0.25) 0, 
+                rgba(0, 128, 0, 0.25) 1px, 
+                transparent 1px, 
+                transparent 80px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            font-weight: bold;
+            color: rgba(0, 128, 0, 0.2);
+            text-transform: uppercase;
+            text-align: center;
+            mix-blend-mode: multiply;
+        }
+        .watermark::before {
+            content: "AUTHENTIC AUTHENTIC AUTHENTIC AUTHENTIC AUTHENTIC";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            transform: rotate(-30deg);
+            font-size: 3em;
+            color: rgba(0, 128, 0, 0.15);
+            font-weight: bold;
+            white-space: nowrap;
         }
         .content { 
             padding: 20px; 
@@ -72,12 +127,19 @@
 </head>
 <body>
     <div class="top-text">This Certificate is Authentic ✅</div>
-    <div class="arrow">&#8595;</div> <!-- ✅ HTML arrow (↓) styled in green -->
-    <img src="baccalaureate.jpg" alt="Baccalaureate" class="header-img" />
+    <div class="arrow">&#8595;</div>
+
+    <!-- ✅ Protected image with overlay + watermark pattern -->
+    <div class="protected">
+        <img src="baccalaureate.jpg" alt="Baccalaureate" />
+        <div class="watermark"></div>
+    </div>
+
     <div class="content">
         <h1>BENYOUSSEF MOUHSSINE</h1>
         <p class="year">2025</p>
     </div>
+
     <div class="footer">Copyright © 2025 Armonis. All rights reserved.</div>
 </body>
 </html>
